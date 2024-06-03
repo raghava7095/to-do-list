@@ -33,7 +33,8 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     perspective: 1000px;
-    width: 90%;
+    margin: 0 20px;
+    width: 90%; /* Added width property */
 }
 
 h1 {
@@ -81,7 +82,7 @@ h1 {
 }
 
 #add-task:hover {
-    background-color: #3e8e41;
+    background-color: #000000;
 }
 
 #add-task i {
@@ -129,8 +130,14 @@ h1 {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+#task-list li .btn-group {
+    display: flex;
+    align-items: center;
+    flex-direction: row; /* Keep buttons side by side */
+}
+
 #task-list li button {
-    background-color: #f44336;
+    background-color: #4CAF50;
     color: #fff;
     border: none;
     padding: 8px 12px;
@@ -138,17 +145,38 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: 5px;
 }
 
-#task-list li button:hover {
+#task-list li .complete-btn {
+    background-color: #4CAF50;
+}
+
+#task-list li .complete-btn:hover {
+    background-color: #3e8e41;
+}
+
+#task-list li .remove-btn {
+    background-color: #f44336;
+    width: 40px;
+}
+
+#task-list li .remove-btn:hover {
     background-color: #d32f2f;
 }
 
 #task-list li button i {
     font-size: 16px;
+}
+
+#task-list li.completed span {
+    text-decoration: line-through;
+    color: #666;
+}
+
+
+#task-list li button {
+    margin-left: 5px; /* Add spacing between buttons */
 }
 
 #clear-all {
@@ -166,12 +194,13 @@ h1 {
 }
 
 #clear-all:hover {
-    background-color: #d32f2f;
+    background-color: #000000;
 }
 
 @media (max-width: 600px) {
     .container {
         padding: 20px;
+        margin: 0 10px;
     }
 
     h1 {
@@ -188,8 +217,14 @@ h1 {
         font-size: 14px;
     }
 
+    #task-list li .btn-group {
+        display: flex;
+        flex-direction: row; /* Keep buttons side by side */
+        align-items: center;
+    }
+
     #task-list li button {
-        padding: 6px 10px;
+        margin-left: 5px; /* Add spacing between buttons */
     }
 
     #clear-all {
